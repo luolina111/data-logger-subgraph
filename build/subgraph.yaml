@@ -1,0 +1,25 @@
+specVersion: 0.0.4
+description: DataLogger subgraph
+repository: https://github.com/luolina111/data-logger-subgraph
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: DataLogger
+    network: sepolia
+    source:
+      address: "0x0704c3ea520f9aa680c837bf6d29a5153c9b36c6"
+      abi: DataLogger
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - DataEntry
+      abis:
+        - name: DataLogger
+          file: DataLogger/DataLogger.json
+      eventHandlers:
+        - event: DataStored(indexed address,string)
+          handler: handleDataStored
+      file: DataLogger/DataLogger.wasm

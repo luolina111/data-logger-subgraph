@@ -1,0 +1,15 @@
+{
+  "name": "datalogger-subgraph",
+  "version": "1.0.0",
+  "description": "Subgraph for DataLogger contract",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --network sepolia yourusername/datalogger-subgraph"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.97.1",
+    "@graphprotocol/graph-ts": "^0.28.0"
+  }
+}
